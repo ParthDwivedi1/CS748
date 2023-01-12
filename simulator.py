@@ -11,22 +11,62 @@ class Predictor:
         self.time_slots_elapsed=0 # updated automatically
         self.time_to_tau=0 #updated automatically
 
-    def find_tau():
+    def find_tau(self):
         # code to find tau and update it to self.time_to_tau
         # use cost + E[ Loss(tau to t with tau being latest queried state) ] <= E[ Loss(tau to t) ] 
+        t = 2
+        while(1):
+            print("@@@@@@       Searching tau for t = "+str(t)) 
+            # A = E[ Loss(last queried to t) ] 
+            # X = E[ Loss(last queried to tau) ] 
+            # B = E[ Loss(tau to t) ]
+            # C = E[ Loss(tau to t with tau being latest queried state) ]
+            # thus inequality is cost + C <= B
+            tau = 0
+            temp_exp_loss = [0]
+            for i in range(t):
+                temp_exp_loss.append( temp_exp_loss[i] + np.min(np.matmul([1-self.queried_state, self.queried_state] , np.linalg.matrix_power(self.prob,i+1))))
+
+            A = temp_exp_loss[t]
+            for j in range(1,t): #j is being iterated to get tau thus j is temp_tau
+                X = temp_exp_loss[j]
+                B = A - X
+                # state prob for tau
+                temp = np.matmul([1-self.queried_state, self.queried_state] , np.linalg.matrix_power(self.prob,j))
+                tau0_exp_loss = 0
+                tau1_exp_loss = 0
+                for k in range(t-j):
+                    tau0_exp_loss += np.min(np.matmul([1, 0] , np.linalg.matrix_power(self.prob,k+1)))
+                    tau1_exp_loss += np.min(np.matmul([0, 1] , np.linalg.matrix_power(self.prob,k+1)))
+                C = np.dot(temp, [tau0_exp_loss, tau1_exp_loss])
+                if self.cost + C <= B :
+                    tau = j
+                    break
+            
+            if tau != 0:
+                self.time_to_tau = tau
+                print("######       tau = "+str(tau)+" found for t = "+str(t)+" where C is "+str(C)+" and B is "+str(B))
+                break
+            t += 1
         return
 
     def reply_for_query(self, reply):
         self.queried_state = reply
+        print("!!!!!!       State Queried and got "+str(reply))
         self.time_slots_elapsed=0
         self.find_tau()
 
     def predict(self):
         # Fill code here
         # To Probe, return -1
-        if self.time_slots_elapsed == self.time_to_tau: return -1
-        # np.argmax(np.linalg.matrix_power(self.prob,self.time_slots_elapsed+1),axis=1)[0]
-        return np.argmax(np.linalg.matrix_power(self.prob,self.time_slots_elapsed+1),axis=1)[0]
+        if self.time_slots_elapsed == self.time_to_tau: 
+            print("??????       Queried for status")
+            return -1
+        # else
+        temp_state = np.argmax(np.matmul([1-self.queried_state, self.queried_state] , np.linalg.matrix_power(self.prob,self.time_slots_elapsed+1)))
+        print("######       Predicted state to be "+str(temp_state))
+        return 
+        #note timeslot elapsed was not incremented thats why +1
 
 class Simulator:
     def __init__(self, prob, state, horizon, cost):
@@ -68,7 +108,9 @@ class Simulator:
             
 if __name__=='__main__':
 
-    prob = np.array([[0.5,0.5],[0.5,0.5]])
-    sim = Simulator(prob,0,10000,4)
+    prob = np.array([[0.5,0.5],[0.5,0.5]])  #[[p00, p01],[p10, p11]]
+    # state 0 means s is [1, 0]  s*P = [p00, p01]
+    # state 1 means s is [0, 1]  s*P = [p10, p11]
+    sim = Simulator(prob,0,10000,0.000001)
     loss=sim.simulate()
-    print(loss)
+    print("LOSS is = "+str(loss))
