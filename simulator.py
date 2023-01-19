@@ -1,5 +1,5 @@
 import numpy as np
-
+from strategy import *
 class Predictor:
     def __init__(self,prob,state,horizon,cost):
         self.pred=state
@@ -75,7 +75,7 @@ class Simulator:
         self.horizon = horizon
         self.cost = cost
         self.num = prob.shape[0]  #number of states
-    
+        self.history=[state]
     def next(self):
         tr=np.random.rand()
         
@@ -83,6 +83,7 @@ class Simulator:
         
         for i in range(self.num):
             if tr<=tot+self.prob[self.state][i]:
+                self.history.append(i)
                 return i
             else:
                 tot+=self.prob[self.state][i]
@@ -104,13 +105,14 @@ class Simulator:
                 predictor.time_slots_elapsed+=1
                 loss+=(self.state-predicted_state)**2
         
-        return loss
+        return loss,np.array(self.history)
             
 if __name__=='__main__':
 
-    prob = np.array([[0.5,0.5],[0.5,0.5]])  #[[p00, p01],[p10, p11]]
+    prob = np.array([[0.8,0.2],[0.7,0.3]])  #[[p00, p01],[p10, p11]]
     # state 0 means s is [1, 0]  s*P = [p00, p01]
     # state 1 means s is [0, 1]  s*P = [p10, p11]
     sim = Simulator(prob,0,10000,0.000001)
-    loss=sim.simulate()
+    loss,history=sim.simulate()
+    DP(history,prob,0.000001,10000)
     print("LOSS is = "+str(loss))
