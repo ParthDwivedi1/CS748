@@ -31,7 +31,7 @@ class Predictor:
 
             A = temp_exp_loss[t]
             for j in range(1,t): #j is being iterated to get tau thus j is temp_tau
-                X = temp_exp_loss[j]
+                X = temp_exp_loss[j-1]
                 B = A - X
                 # state prob for tau
                 temp = np.matmul([1-self.queried_state, self.queried_state] , np.linalg.matrix_power(self.prob,j))
@@ -41,6 +41,7 @@ class Predictor:
                     tau0_exp_loss += np.min(np.matmul([1, 0] , np.linalg.matrix_power(self.prob,k+1)))
                     tau1_exp_loss += np.min(np.matmul([0, 1] , np.linalg.matrix_power(self.prob,k+1)))
                 C = np.dot(temp, [tau0_exp_loss, tau1_exp_loss])
+                print("-----    ","Loss is",C," and loss is ",B)
                 if self.cost + C <= B :
                     tau = j
                     break
@@ -111,10 +112,12 @@ class Simulator:
             
 if __name__=='__main__':
 
-    prob = np.array([[0.9,0.1],[0.1,0.9]])  #[[p00, p01],[p10, p11]]
+    prob = np.array([[0.7,0.3],[0.3,0.7]])  #[[p00, p01],[p10, p11]]
     # state 0 means s is [1, 0]  s*P = [p00, p01]
     # state 1 means s is [0, 1]  s*P = [p10, p11]
-    sim = Simulator(prob,0,100,0.2)
+    T=100
+    cost=0.4
+    sim = Simulator(prob,0,T,cost)
     loss,history=sim.simulate()
-    DP(history,prob,0.2,100)
+    OPTPolicy(prob,T,cost)
     print("LOSS is = "+str(loss))
