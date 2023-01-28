@@ -1,5 +1,6 @@
 import numpy as np
 from strategy import *
+from utility import *
 class Predictor:
     def __init__(self,prob,state,horizon,cost):
         self.pred=state
@@ -17,7 +18,8 @@ class Predictor:
         # self.time_to_tau=1
         # return
         t = 2
-        while(1):
+        self.time_to_tau=float('inf')
+        while(t<self.horizon):
             print("@@@@@@       Searching tau for t = "+str(t)) 
             # A = E[ Loss(last queried to t) ] 
             # X = E[ Loss(last queried to tau) ] 
@@ -90,6 +92,7 @@ class Simulator:
                 return i
             else:
                 tot+=self.prob[self.state][i]
+        #write_log(f"tr:{tr},tot:{tot}")
 
     def simulate(self):
         loss=0.0
@@ -106,6 +109,7 @@ class Simulator:
                 loss+=self.cost
             else:
                 predictor.time_slots_elapsed+=1
+                #write_log(f"num: {self.num}:::predicted_state: {predicted_state} ::: true_state:{self.state}",'error')
                 loss+=(self.state-predicted_state)**2
         
         return loss,np.array(self.history)
