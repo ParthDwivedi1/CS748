@@ -34,7 +34,7 @@ def test_algo(algo_arr,test_cases=None):
             #saving losses in history__
             history_obj['loss']=loss_arr
 
-            write_file('test.json',history_obj)
+            write_file('test2.json',history_obj)
             write_log(f"TEST CASE DONE::::")
 
 if __name__=='__main__':

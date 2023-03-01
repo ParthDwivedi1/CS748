@@ -1,7 +1,8 @@
 import numpy as np
 import json
 import logging
-logging.basicConfig(filename='log',level=logging.DEBUG)
+import datetime
+logging.basicConfig(filename='./LOGS/log'+str(datetime.datetime.now()),level=logging.DEBUG)
 #numpy writer::
 class NumpyEncoder(json.JSONEncoder):
     """ Special json encoder for numpy types """
@@ -50,3 +51,16 @@ def write_log(log,type='info'):
         logging.error(log)
     elif(type=='critical'):
         logging.critical(log)
+
+
+def read_ndjson(fp):
+    json_str=""
+    arr=[]
+    with open(fp) as f:
+        for line in f:
+            if(line[0]=='}' and line[1]=='{'):
+                arr.append(json.loads(json_str))
+                json_str="{"
+            else:
+                json_str+=line
+    return arr
