@@ -17,20 +17,22 @@ class Predictor:
         # self.time_to_tau=1
         # return
         t = 2
-        while(1):
+        tau=-1
+        while(t<=self.horizon):
             print("@@@@@@       Searching tau for t = "+str(t)) 
             # A = E[ Loss(last queried to t) ] 
             # X = E[ Loss(last queried to tau) ] 
             # B = E[ Loss(tau to t) ]
             # C = E[ Loss(tau to t with tau being latest queried state) ]
             # thus inequality is cost + C <= B
-            tau = 0
+            
             temp_exp_loss = [0]
             for i in range(t):
                 temp_exp_loss.append( temp_exp_loss[i] + np.min(np.matmul([1-self.queried_state, self.queried_state] , np.linalg.matrix_power(self.prob,i+1))))
-
+                # print((np.linalg.matrix_power(self.prob,i+1)))
+            # print(temp_exp_loss)
             A = temp_exp_loss[t]
-            for j in range(1,t): #j is being iterated to get tau thus j is temp_tau
+            for j in range(t-1,0,-1): #j is being iterated to get tau thus j is temp_tau
                 X = temp_exp_loss[j-1]
                 B = A - X
                 # state prob for tau
@@ -46,12 +48,13 @@ class Predictor:
                     tau = j
                     break
             
-            if tau != 0:
+            if tau != -1:
                 self.time_to_tau = tau
                 print("######       tau = "+str(tau)+" found for t = "+str(t)+" where C is "+str(C)+" and B is "+str(B))
                 break
             t += 1
-        return
+        
+        return 
 
     def reply_for_query(self, reply):
         self.queried_state = reply
@@ -112,10 +115,10 @@ class Simulator:
             
 if __name__=='__main__':
 
-    prob = np.array([[0.7,0.3],[0.3,0.7]])  #[[p00, p01],[p10, p11]]
+    prob = np.array([[0.9,0.1],[0.1,0.9]])  #[[p00, p01],[p10, p11]]
     # state 0 means s is [1, 0]  s*P = [p00, p01]
     # state 1 means s is [0, 1]  s*P = [p10, p11]
-    T=100
+    T=200
     cost=0.4
     sim = Simulator(prob,0,T,cost)
     loss,history=sim.simulate()

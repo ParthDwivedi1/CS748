@@ -101,7 +101,8 @@ def OPTPolicy(prob,T,cost):
             loss[i,k]=curr
             
     print("Expected Loss: ",loss[0,0])
-    curr=0
-    while(curr<1000):
-        print(dp[int(curr),0])
-        curr=dp[int(curr),0]
+    # print(dp)
+    # curr=0
+    # while(curr<1000):
+    #     print(dp[int(curr),1])
+    #     curr=dp[int(curr),1]
