@@ -119,10 +119,12 @@ class Simulator:
                 tot+=self.prob[self.state][i]
         #write_log(f"tr:{tr},tot:{tot}")
 
-    def simulate(self):
+    def simulate(self,tau_dict=None):
         loss=0.0
         
         predictor = Predictor(self.prob,self.state,self.horizon,self.cost)
+        if(tau_dict is not None):
+            predictor.tau_dict=tau_dict
         predictor.reply_for_query(self.state) #sets up the predictor for first state provided
             
         for step in range(self.horizon):
