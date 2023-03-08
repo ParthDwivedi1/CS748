@@ -1,0 +1,301 @@
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:1/100 :13.9 10.0
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:2/100 :12.600000000000001 11.5
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:3/100 :15.033333333333333 13.333333333333334
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:4/100 :14.600000000000001 14.5
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:5/100 :14.540000000000001 13.8
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:6/100 :13.5 13.666666666666666
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:7/100 :13.228571428571428 14.714285714285714
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:8/100 :13.487499999999999 13.875
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:9/100 :13.944444444444445 13.11111111111111
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:10/100 :13.64 12.3
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:11/100 :13.354545454545455 12.636363636363637
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:12/100 :13.516666666666667 12.75
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:13/100 :13.576923076923078 12.307692307692308
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:14/100 :13.507142857142858 12.285714285714286
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:15/100 :13.226666666666668 12.2
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:16/100 :13.481250000000003 11.9375
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:17/100 :13.723529411764709 12.176470588235293
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:18/100 :13.93888888888889 12.055555555555555
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:19/100 :13.957894736842107 11.842105263157896
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:20/100 :13.825000000000003 11.95
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:21/100 :13.65714285714286 12.19047619047619
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:22/100 :14.063636363636368 12.272727272727273
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:23/100 :14.086956521739136 12.391304347826088
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:24/100 :13.845833333333339 12.666666666666666
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:25/100 :14.088000000000005 12.68
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:26/100 :14.192307692307697 12.807692307692308
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:27/100 :14.233333333333338 12.88888888888889
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:28/100 :14.150000000000004 12.964285714285714
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:29/100 :14.165517241379314 12.96551724137931
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:30/100 :14.146666666666672 12.866666666666667
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:31/100 :14.50645161290323 12.838709677419354
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:32/100 :14.750000000000005 12.75
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:33/100 :14.672727272727277 12.727272727272727
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:34/100 :14.80882352941177 12.764705882352942
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:35/100 :14.822857142857147 12.685714285714285
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:36/100 :14.697222222222226 12.583333333333334
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:37/100 :14.605405405405408 12.72972972972973
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:38/100 :14.676315789473685 12.710526315789474
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:39/100 :14.487179487179487 12.743589743589743
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:40/100 :14.407499999999999 12.925
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:41/100 :14.52682926829268 13.0
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:42/100 :14.759523809523806 13.0
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:43/100 :14.888372093023252 13.023255813953488
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:44/100 :14.78181818181818 13.136363636363637
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:45/100 :14.806666666666663 13.177777777777777
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:46/100 :14.773913043478256 13.152173913043478
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:47/100 :14.810638297872336 13.23404255319149
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:48/100 :14.727083333333328 13.291666666666666
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:49/100 :14.818367346938771 13.326530612244898
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:50/100 :14.667999999999996 13.28
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:51/100 :14.543137254901955 13.490196078431373
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:52/100 :14.499999999999993 13.403846153846153
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:53/100 :14.626415094339617 13.452830188679245
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:54/100 :14.644444444444439 13.407407407407407
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:55/100 :14.819999999999995 13.454545454545455
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:56/100 :14.899999999999993 13.5
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:57/100 :14.854385964912273 13.543859649122806
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:58/100 :14.827586206896544 13.672413793103448
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:59/100 :14.835593220338975 13.661016949152541
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:60/100 :14.736666666666657 13.65
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:61/100 :14.713114754098351 13.672131147540984
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:62/100 :14.695161290322572 13.596774193548388
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:63/100 :14.593650793650784 13.603174603174603
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:64/100 :14.546874999999991 13.453125
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:65/100 :14.61999999999999 13.384615384615385
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:66/100 :14.645454545454536 13.318181818181818
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:67/100 :14.714925373134317 13.328358208955224
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:68/100 :14.723529411764694 13.352941176470589
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:69/100 :14.705797101449264 13.376811594202898
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:70/100 :14.757142857142847 13.357142857142858
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:71/100 :14.759154929577457 13.380281690140846
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:72/100 :14.67777777777777 13.375
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:73/100 :14.699999999999992 13.342465753424657
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:74/100 :14.590540540540532 13.256756756756756
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:75/100 :14.630666666666658 13.293333333333333
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:76/100 :14.560526315789463 13.381578947368421
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:77/100 :14.544155844155833 13.493506493506494
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:78/100 :14.59999999999999 13.41025641025641
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:79/100 :14.545569620253154 13.354430379746836
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:80/100 :14.69249999999999 13.45
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:81/100 :14.749382716049372 13.358024691358025
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:82/100 :14.695121951219502 13.292682926829269
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:83/100 :14.669879518072277 13.409638554216867
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:84/100 :14.56190476190475 13.369047619047619
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:85/100 :14.644705882352927 13.376470588235295
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:86/100 :14.559302325581381 13.372093023255815
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:87/100 :14.48620689655171 13.344827586206897
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:88/100 :14.518181818181803 13.306818181818182
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:89/100 :14.54157303370785 13.303370786516854
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:90/100 :14.589999999999986 13.333333333333334
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:91/100 :14.568131868131854 13.307692307692308
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:92/100 :14.554347826086941 13.315217391304348
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:93/100 :14.540860215053748 13.376344086021506
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:94/100 :14.555319148936157 13.297872340425531
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:95/100 :14.563157894736827 13.305263157894737
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:96/100 :14.573958333333318 13.3125
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:97/100 :14.594845360824726 13.31958762886598
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:98/100 :14.597959183673455 13.326530612244898
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:99/100 :14.54444444444443 13.313131313131313
+INFO:root:{0: [inf, 0, [1, 0]], 1: [0.3, 1, array([0.5, 0.5])]}
+INFO:root:pred_loss inf inf
+INFO:root:100/100 :14.531999999999984 13.31
+INFO:root:1.4531999999999985 1.331

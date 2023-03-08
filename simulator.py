@@ -24,7 +24,7 @@ class Predictor:
         found=False#flag that tells if we found such tau::
         P=[1-state,state]#probabilities when we query at tau (can be randomly initialised)
         while(t<self.horizon):
-            #print("@@@@@@       Searching tau for t = "+str(t)) 
+            print("@@@@@@       Searching tau for t = "+str(t)) 
             # A = E[ Loss(last queried to t) ] 
             # X = E[ Loss(last queried to tau) ] 
             # B = E[ Loss(tau to t) ]
@@ -141,14 +141,14 @@ class Simulator:
             
 if __name__=='__main__':
 
-    prob = np.array([[0.8,0.2],[0.1,0.9]])  #[[p00, p01],[p10, p11]]
+    prob = np.array([[0.8,0.2],[0.5,0.5]])  #[[p00, p01],[p10, p11]]
     # state 0 means s is [1, 0]  s*P = [p00, p01]
     # state 1 means s is [0, 1]  s*P = [p10, p11]
     loss1=0
     loss2=0
 
     for i in range(100):
-        T=5000
+        T=50
         cost=0.3
         pred=Predictor(prob,1,T,cost)
         arr=pred.pred_exp_loss()
