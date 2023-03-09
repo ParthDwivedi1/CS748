@@ -61,7 +61,7 @@ class Predictor:
 
                 break
             t += 1
-        return {"found":found,"tau":tau,"loss":loss+cost,"P":P}
+        return {"found":found,"tau":tau,"loss":loss+self.cost,"P":P}
 
     def reply_for_query(self, reply):
         self.queried_state = reply

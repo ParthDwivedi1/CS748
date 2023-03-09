@@ -117,7 +117,7 @@ def BackwardSolve(history,prob,cost):
         if(val==1):
             loss+=cost
         else:
-            fin = np.linalg.matrix_power(prob,j-last_probe_time)
+            fin = np.linalg.matrix_power(prob,i-last_probe_time)
             fin_row=fin[:,last_state_probed]
             loss+=np.min(fin_row)
             
