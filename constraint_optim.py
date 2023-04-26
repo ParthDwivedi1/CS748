@@ -28,5 +28,5 @@ def optim_con(prob,cost=0.4,Mx_val=10):
     #print(arr)
     alpha=res[0]+1
     beta=res[1]+1
-    return alpha,beta
+    return alpha,beta,np.min(arr)
     #print(f"alpha:{alpha} \nbeta:{beta}")

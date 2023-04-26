@@ -85,3 +85,93 @@ def OPTPolicy(prob,T,cost):
             loss[i,k]=curr
             
     return loss[0,0]
+
+def BackwardSolve(history,prob,cost):
+    horizon = len(history)
+    
+    #print(history)
+    
+    loss=0.0
+    
+    last_probe_time=0
+    last_state_probed=0
+    
+    alpha =horizon
+    beta=horizon
+    
+    # for i in range(horizon):
+        
+    #     val=0
+    #     for j in range(last_probe_time+1,i):
+    #         temp1=cost
+    #         mat = np.linalg.matrix_power(prob,j-last_probe_time)
+    #         mat_row=mat[:,last_state_probed]
+    #         temp2=np.min(mat_row)
+    #         for k in range(j+1,i+1):
+    #             temp2+=np.min(np.matmul(np.linalg.matrix_power(prob,k-j),mat_row))
+    #             temp1+=np.matmul(np.min(np.linalg.matrix_power(prob,k-j),axis=0),mat_row)
+            
+    #         if(temp1<temp2):
+                
+    #             if(last_state_probed==0):
+    #                 alpha=i
+    #             else:
+    #                 beta=i-last_probe_time
+                    
+    #             last_probe_time=i
+    #             last_state_probed=history[i]
+    #             val=1
+    #             break
+        
+    #     if(val==1):
+    #         loss+=cost
+    #     else:
+    #         fin = np.linalg.matrix_power(prob,i-last_probe_time)
+    #         fin_row=fin[:,last_state_probed]
+    #         loss+=np.min(fin_row)
+            
+    # print(loss)
+    
+    
+    for i in range(horizon):
+        
+        # val=0
+        for j in range(last_probe_time+1,i):
+            temp1=cost
+            mat = np.linalg.matrix_power(prob,j-last_probe_time)
+            mat_row=mat[:,last_state_probed]
+            temp2=np.min(mat_row)
+            for k in range(j+1,i+1):
+                temp2+=np.min(np.matmul(np.linalg.matrix_power(prob,k-j),mat_row))
+                temp1+=np.matmul(np.min(np.linalg.matrix_power(prob,k-j),axis=0),mat_row)
+            
+            if(temp1<temp2):
+                alpha=i
+                break
+        
+        if alpha!=horizon:
+            break
+    
+    last_probe_time=0
+    last_state_probed=1
+    
+    for i in range(horizon):    
+        # val=0
+        for j in range(last_probe_time+1,i):
+            temp1=cost
+            mat = np.linalg.matrix_power(prob,j-last_probe_time)
+            mat_row=mat[:,last_state_probed]
+            temp2=np.min(mat_row)
+            for k in range(j+1,i+1):
+                temp2+=np.min(np.matmul(np.linalg.matrix_power(prob,k-j),mat_row))
+                temp1+=np.matmul(np.min(np.linalg.matrix_power(prob,k-j),axis=0),mat_row)
+            
+            if(temp1<temp2):
+                beta=i
+                break
+        
+        if beta!=horizon:
+            break
+    # print(loss)
+    
+    return alpha,beta

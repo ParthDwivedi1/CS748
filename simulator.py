@@ -11,7 +11,7 @@ class Predictor:
         self.queried_state=state # updated automatically
         self.time_slots_elapsed=0 # updated automatically
         self.time_to_tau=0 #updated automatically
-        
+        self.LOSS_DICT=None
         self.tau_dict={}
     def find_tau(self,state):
         # code to find tau and update it to self.time_to_tau
@@ -61,7 +61,64 @@ class Predictor:
 
                 break
             t += 1
-        return {"found":found,"tau":tau,"loss":loss+cost,"P":P}
+        return {"found":found,"tau":tau,"loss":loss+self.cost,"P":P}
+
+    def find_tau_old(self,state,T=1000):
+        # code for alternate front solve(supposed to be optimal?)
+        # T-> denotes the lookahead from current step we will be looking for to confirm if the value is tau:
+        tau = 1
+        self.time_to_tau=float('inf')
+        loss=float('inf')
+        found=False#flag that tells if we found such tau::
+        P=[1-state,state]#probabilities when we query at tau (can be randomly initialised)
+        if(self.LOSS_DICT is None):
+            self.LOSS_DICT=[[0],[0]]
+            prob_state=[1,0]
+            loss=0
+            for i in range(1,T+1):
+                prob_state=np.matmul(prob_state,self.prob)
+                loss+=np.min(prob_state)
+                self.LOSS_DICT[0].append(loss)
+            
+            prob_state=[0,1]
+            loss=0
+            for i in range(1,T+1):
+                prob_state=np.matmul(prob_state,self.prob)
+                loss+=np.min(prob_state)
+                self.LOSS_DICT[1].append(loss)
+        while(tau<self.horizon):
+            t = tau+1
+            prob_state=np.matmul(P,np.power(self.prob,tau))
+            prob_state_temp=prob_state
+            B=np.min(prob_state_temp)
+            while(t<=tau+T):
+                print("@@@@@@       Searching t for tau = "+str(tau)) 
+                # A = E[ Loss(last queried to t) ] 
+                # X = E[ Loss(last queried to tau) ] 
+                # B = E[ Loss(tau to t) ]
+                # C = E[ Loss(tau to t with tau being latest queried state) ]
+                # thus inequality is cost + C <= B
+                
+                
+                prob_state_temp=np.matmul(prob_state_temp,self.prob)
+                B+=np.min(prob_state_temp)
+                
+                C=prob_state[0]*self.LOSS_DICT[0][t-tau]+prob_state[1]*self.LOSS_DICT[1][t-tau]
+                #X=P[0]*self.LOSS_DICT[0][tau-1]+P[1]*self.LOSS_DICT[1][tau-1]
+
+
+                if(C+self.cost<=B):
+                    found=True
+                    loss=P[0]*self.LOSS_DICT[0][tau-1]+P[1]*self.LOSS_DICT[1][tau-1]
+                    P=prob_state
+                    break
+                
+                t += 1
+            if(found):
+                break
+            tau+=1
+        print({"found":found,"tau":tau,"loss":loss+self.cost,"P":P})
+        return {"found":found,"tau":tau,"loss":loss+self.cost,"P":P}
 
     def reply_for_query(self, reply):
         self.queried_state = reply
@@ -72,7 +129,12 @@ class Predictor:
         else:
             tau_reply=self.find_tau(reply)
             self.tau_dict[reply]=[tau_reply['loss'],tau_reply["tau"],tau_reply["P"]]
-
+    def get_tau(self):
+        for i in range(2):
+            if(i not in self.tau_dict):
+                tau_reply=self.find_tau(i)
+                self.tau_dict[i]=[tau_reply['loss'],tau_reply["tau"],tau_reply["P"]]
+        return self.tau_dict
     def pred_exp_loss(self):
         for i in range(2):
             if(i not in self.tau_dict):
@@ -82,7 +144,7 @@ class Predictor:
         v_0=(self.tau_dict[0][0]*self.tau_dict[1][2][0]+self.tau_dict[0][2][1]*self.tau_dict[1][0])/(self.tau_dict[0][1]*self.tau_dict[1][2][0]+self.tau_dict[1][1]*self.tau_dict[0][2][1])
         v_1=(self.tau_dict[1][0]*self.tau_dict[0][2][1]+self.tau_dict[1][2][0]*self.tau_dict[0][0])/(self.tau_dict[1][1]*self.tau_dict[0][2][1]+self.tau_dict[0][1]*self.tau_dict[1][2][0])
 
-        return [v_0,v_1]
+        return [v_0,v_1],self.tau_dict
         
         
 
@@ -153,7 +215,7 @@ if __name__=='__main__':
         T=50
         cost=0.3
         pred=Predictor(prob,1,T,cost)
-        arr=pred.pred_exp_loss()
+        arr,tau_=pred.pred_exp_loss()
         sim = Simulator(prob,1,T,cost)
         write_log(f"pred_loss {arr[0]*T-cost} {arr[1]*T-cost}")
         loss1_,history=sim.simulate()

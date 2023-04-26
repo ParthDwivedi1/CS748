@@ -2,7 +2,7 @@ import numpy as np
 import json
 import logging
 import datetime
-logging.basicConfig(filename='./LOGS/log'+str(datetime.datetime.now()),level=logging.DEBUG)
+logging.basicConfig(filename='/Users/saitejavaranasi/Desktop/rnd/CS748/LOGS/log'+str(datetime.datetime.now()),level=logging.DEBUG)
 #numpy writer::
 class NumpyEncoder(json.JSONEncoder):
     """ Special json encoder for numpy types """
@@ -58,7 +58,11 @@ def read_ndjson(fp):
     arr=[]
     with open(fp) as f:
         for line in f:
-            if(line[0]=='}' and line[1]=='{'):
+            if(len(line)==0):
+                continue
+            if((len(line)==1 and line[0]=='}') or (line[0]=='}' and line[1]=='{')):
+                #print(json_str)
+                json_str+='}'
                 arr.append(json.loads(json_str))
                 json_str="{"
             else:
