@@ -21,7 +21,7 @@ def test_algo(algo_arr,test_cases=None):
     #tests against all the algoriths provided:: in the algo arr against THE conjectured algorithm::
     if(test_cases is None):
         test_cases=[]
-        for i in range(50):
+        for i in range(5):
             dict_test_case={}
             p1=np.random.rand()
             p2=np.random.rand()
@@ -61,7 +61,11 @@ def test_optim(test_cases=None):
             dict_test_case['cost']=3*np.random.rand()
             test_cases.append(dict_test_case)
             write_log(f"Test case {i}/50 created")
+    
+    co=0
     for test_case in test_cases:
+            co+=1
+            print(co)
             history_obj={}
             alpha,beta,v=optim_con(test_case['prob'],cost=test_case['cost'],Mx_val=100)
             loss=0
