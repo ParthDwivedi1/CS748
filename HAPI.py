@@ -1,11 +1,10 @@
 import numpy as np
 
-if __name__=='__main__':
-    prob = np.array([[0.5,0.5],
-                    [0.5,0.5]])
+def HAPI(test_case):
+    prob = test_case['prob']
     
-    horizon =1000
-    cost = 0.6
+    horizon =test_case['T']
+    cost = test_case['cost']
         
     old_policy=np.array([horizon,horizon])
     
@@ -18,7 +17,7 @@ if __name__=='__main__':
         # print(pow_prob[i,:,:])
         
 
-    new_policy=np.array([1,1]) # Sample after itne steps
+    new_policy=np.array([0,0]) # Sample after itne steps
     # print(pow_prob[6,:,:])
     while((new_policy!=old_policy).any()):
         loss=0
@@ -30,7 +29,7 @@ if __name__=='__main__':
         
         c = (pow_prob[new_policy[1]+1,0,1]*((loss_al[0]+cost)/(new_policy[0]+1)) + pow_prob[new_policy[0]+1,1,0]*((loss_bet[1]+cost)/(new_policy[1]+1)))/(pow_prob[new_policy[0]+1,1,0]+pow_prob[new_policy[1]+1,0,1])
         
-        print(c)
+        #print(c)
         
         newal=-1
         newb=-1
@@ -66,5 +65,5 @@ if __name__=='__main__':
             
             # print(old_policy,new_policy)
             old_policy,new_policy=new_policy,old_policy
-            print(old_policy,new_policy)
-    print(new_policy+[1,1])
+            #print(old_policy,new_policy)
+    return (new_policy+[1,1])

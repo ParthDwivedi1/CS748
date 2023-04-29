@@ -3,6 +3,7 @@ import json
 import logging
 import matplotlib.pyplot as plt
 import sys
+
 sys.path.insert(0,'../')
 from utility import *
 
@@ -24,14 +25,21 @@ def plot_g1(fn):
     plt.show()
 
 
-
-
-
+def unsym_index(A):
+    A=np.array(A)
+    norm_sym=np.linalg.norm(A+A.T,2)
+    norm_anti=np.linalg.norm(A-A.T,2)
+    return (norm_sym-norm_anti)/(norm_sym+norm_anti)
+def plot_table():
+    arr=read_ndjson('../test_algosymm_1.json')
+    print(f"symmetry index    ALGO    HAPI(exact)")
+    for obj in arr:
+        print(f"{round(unsym_index(obj['test_case']['prob']),2):10} {round(obj['loss_symmalgo'][0],2):10} {round(obj['loss_inf'],2):10}")
 
 
 
 
 if __name__=='__main__':
-    plot_g1('test_dpvsinf.json')
+    plot_table()
 
 

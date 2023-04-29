@@ -2,7 +2,8 @@ import numpy
 from strategy import *
 from simulator import  Simulator,Predictor
 from constraint_optim import *
-
+from HAPI import *
+from inf_optimal import *
 np.random.seed(123)
 def tc_dp_inf(n):
      p1=np.random.rand()
@@ -110,8 +111,61 @@ def test_optim_algo(test_cases=None):
 
             history_obj['loss_algo']=loss
             write_file('test_alogvsco_new_4.json',history_obj)
+def test_HAPI(test_cases=None):
+    if(test_cases is None):
+        test_cases=[]
+        for i in range(100):
+            dict_test_case={}
+            p1=np.random.rand()
+            p2=np.random.rand()
+            dict_test_case['prob']=np.array([[p1,1-p1],[p2,1-p2]])
+            dict_test_case['T']=10*np.random.randint(1,20)
+            dict_test_case['cost']=3*np.random.rand()
+            test_cases.append(dict_test_case)
+            write_log(f"Test case {i}/100 created")
+    for test_case in test_cases:
+        history_obj={}
+        alpha,beta,v=optim_con(test_case['prob'],cost=test_case['cost'],Mx_val=100)
+        if(alpha==100 and beta==100):
+                continue
+        arr=HAPI(test_case)
+        alpha_hapi=arr[0]
+        beta_hapi=arr[1]
+        history_obj['test_case']=test_case
+        history_obj['policy_inf_optimal']=[alpha,beta]
+        history_obj['policy_hapi']=[alpha_hapi,beta_hapi]
+        history_obj['loss_hapi']=get_cost(alpha_hapi,beta_hapi,test_case['prob'],test_case['cost'])
+        history_obj['loss_inf']=v
+        
+        write_file('test_algohapi_1.json',history_obj)
+def test_symmalgo(test_cases=None):
+    if(test_cases is None):
+        test_cases=[]
+        for i in range(100):
+            dict_test_case={}
+            p1=np.random.rand()
+            p2=np.random.rand()
+            dict_test_case['prob']=np.array([[p1,1-p1],[p2,1-p2]])
+            dict_test_case['T']=10*np.random.randint(1,20)
+            dict_test_case['cost']=3*np.random.rand()
+            test_cases.append(dict_test_case)
+            write_log(f"Test case {i}/100 created")
+    for test_case in test_cases:
+        history_obj={}
+        alpha,beta,v=optim_con(test_case['prob'],cost=test_case['cost'],Mx_val=100)
+        if(alpha==100 and beta==100):
+                continue
+        alpha_hapi=get_min_l(test_case,0)
+        beta_hapi=get_min_l(test_case,1)
+        history_obj['test_case']=test_case
+        history_obj['policy_inf_optimal']=[alpha,beta]
+        history_obj['policy_symmalgo']=[alpha_hapi,beta_hapi]
+        history_obj['loss_symmalgo']=get_cost(alpha_hapi,beta_hapi,test_case['prob'],test_case['cost'])
+        history_obj['loss_inf']=v
+        
+        write_file('test_algosymm_1.json',history_obj)
 if __name__=='__main__':
-    test_optim_algo()
+    test_symmalgo()
 
 
             

@@ -30,3 +30,27 @@ def optim_con(prob,cost=0.4,Mx_val=10):
     beta=res[1]+1
     return alpha,beta,np.min(arr)
     #print(f"alpha:{alpha} \nbeta:{beta}")
+
+def get_min_l(test_case,state):
+    P=test_case['prob']
+    cost=test_case['cost']
+    T=test_case['T']
+    mtx=np.zeros((1,2))
+    mtx[0,state]=1
+    loss=0
+    vals=np.zeros(T)
+    for i in range(T):
+        loss+=np.min(mtx)
+        vals[i]=(loss+cost)/(i+1)
+        mtx=np.matmul(mtx,P)
+    return np.argmin(vals)+1
+
+
+#predicted algorithm (similar to back-calculate::)
+# def get_new_algo(P,state,cost,T):
+#     mtx=np.zeros((1,2))
+#     mtx[0,state]=1
+#     loss=0
+#     for i in range(T):
+#         loss+=np.min(mtx)
+#         if((loss+cost)/(i+1)<(loss))
