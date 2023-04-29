@@ -1,0 +1,21 @@
+{
+    "alpha": 180,
+    "beta": 180,
+    "testcase": 0
+}{
+    "alpha": 6,
+    "beta": 16,
+    "testcase": 1
+}{
+    "alpha": 60,
+    "beta": 60,
+    "testcase": 2
+}{
+    "alpha": 140,
+    "beta": 140,
+    "testcase": 3
+}{
+    "alpha": 1,
+    "beta": 2,
+    "testcase": 4
+}
